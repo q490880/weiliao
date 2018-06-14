@@ -1,7 +1,7 @@
 # 微聊
 本系统是基于easyswoole开发的聊天室系统,实现了登陆、退出、选择聊天室、向某个聊天室内的某个成员发起私聊、和全体成员聊天。<br>
 本系统代码简洁，非常适合初学者学习swoole和easyswoole。<br>
-开发环境:swoole 2.x easyswoole 2.x redis3.x Mysql5.7 PHP7.1+ Nginx<br>
+开发环境:swoole2.x、easyswoole2.x、redis3.x、Mysql5.7、PHP7.1+、Nginx<br>
 安装步骤:<br>
 　　1、安装PHP，给php安装swoole2.x扩展<br>
 　　2、安装Mysql、Redis、Nginx,将根目录下的easyswoole.sql导入到mysql<br>
