@@ -20,6 +20,7 @@
 　　}<br>
 	4、安装easyswoole，进入根目录下执行 php composer.phar require easyswoole/easyswoole=2.x-dev<br>
 	5、执行 php vendor/bin/easyswoole install 选择N 不要覆盖配置文件
+	6、安装MysqlDb扩展 php composer.phar require joshcam/mysqli-database-class:dev-master
 　　6、修改根目录下Config.php Redis和Mysql的配置<br>
 　　7、Public/static/js/common.js下面的baseUrl改为你的域名或IP<br>
 　　8、进入根目录 php easyswoole start 启动项目<br>
