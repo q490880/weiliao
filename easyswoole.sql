@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50622
 File Encoding         : 65001
 
-Date: 2018-06-14 10:10:33
+Date: 2018-06-14 10:58:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,9 +35,9 @@ CREATE TABLE `wl_member` (
 -- ----------------------------
 -- Records of wl_member
 -- ----------------------------
-INSERT INTO `wl_member` VALUES ('1', '18500971054', '123456', '许鹏亮', '11468804@qq.com', '1', 'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png', '2018-06-06 15:21:24', '2018-06-06 15:21:57');
-INSERT INTO `wl_member` VALUES ('2', '18500971055', '123456', '哈哈哈', '123456@qq.cm', '1', 'http://', '2018-06-09 12:44:01', '2018-06-09 12:44:01');
-INSERT INTO `wl_member` VALUES ('3', '18500971056', '123456', '测试1', '1231231@qq.com', '1', 'http://11', '2018-06-09 12:44:16', '2018-06-09 12:44:16');
+INSERT INTO `wl_member` VALUES ('1', '18588888888', '123456', '许鹏亮', '11468804@qq.com', '1', 'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png', '2018-06-06 15:21:24', '2018-06-14 10:50:50');
+INSERT INTO `wl_member` VALUES ('2', '18577777777', '123456', '哈哈哈', '123456@qq.cm', '1', 'http://', '2018-06-09 12:44:01', '2018-06-14 10:50:58');
+INSERT INTO `wl_member` VALUES ('3', '18566666666', '123456', '测试1', '1231231@qq.com', '1', 'http://11', '2018-06-09 12:44:16', '2018-06-14 10:51:05');
 
 -- ----------------------------
 -- Table structure for `wl_member_friend`
