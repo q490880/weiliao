@@ -1,5 +1,5 @@
-baseUrl = 'http://www.weiliao.com/';
-
+baseUrl = 'www.weiliao.com';
+webServer = 'http://'+baseUrl+'/';
 
 /*
 * 设置cookie
