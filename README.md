@@ -18,9 +18,11 @@
 　　　　　　}<br>
 　　　　}<br>
 　　}<br>
-　　4、修改根目录下Config.php Redis和Mysql的配置<br>
-　　5、Public/static/js/common.js下面的baseUrl改为你的域名或IP<br>
-　　6、进入根目录 php easyswoole start 启动项目<br>
+	4、安装easyswoole，进入根目录下执行 php composer.phar require easyswoole/easyswoole=2.x-dev<br>
+	5、执行 php vendor/bin/easyswoole install 选择N 不要覆盖配置文件
+　　6、修改根目录下Config.php Redis和Mysql的配置<br>
+　　7、Public/static/js/common.js下面的baseUrl改为你的域名或IP<br>
+　　8、进入根目录 php easyswoole start 启动项目<br>
 目前还没有开发用户注册功能,如需添加账户可以自己在wl_member表中添加。<br>
 初始化账户:18588888888、18577777777、185666666666密码都是123456<br>
 如有问题，欢迎大家和我一起交流学习。<br>
