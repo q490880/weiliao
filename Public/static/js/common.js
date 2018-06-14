@@ -1,6 +1,4 @@
 baseUrl = 'www.weiliao.com';
-webServer = 'http://'+baseUrl+'/';
-
 /*
 * 设置cookie
 * */
@@ -43,7 +41,7 @@ function clearAllCookie() {
 * 拼装Url
 * */
 function reformUrl(url){
-    return baseUrl + url;
+    return 'http://'+baseUrl+'/' + url;
 }
  /**
  * 判断是否是空
