@@ -1,0 +1,13 @@
+# ide
+/.idea/
+
+
+# composer
+/vendor/
+composer.lock
+
+
+# easySwoole
+/Log/
+/Temp/
+/easyswoole.install
