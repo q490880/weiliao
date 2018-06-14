@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>微聊 - 让生活更美好 | 登陆</title>
+    <link href="./static/css/login.css" rel='stylesheet' type='text/css' />
+    <script src="./static/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="./static/plugins/layer/layer.js"></script>
+    <script src="./static/js/common.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+<h1>微聊</h1>
+<div class="login-form">
+    <div class="head-info">
+        <label class="lbl-1"></label>
+        <label class="lbl-2"></label>
+        <label class="lbl-3"></label>
+    </div>
+    <div class="clear"> </div>
+    <div class="avtar"><img src="./static/images/avtar.png" /></div>
+    <div class="key">
+        <input type="text" id="mobile" name="mobile" placeholder="请输入手机号" >
+    </div>
+
+    <div class="key">
+        <input type="password" id="password" name="password" placeholder="请输入密码">
+    </div>
+    <div class="signin">
+        <input type="submit" id="login" value="登录" >
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $('#mobile,#password').change(function(){
+            $('#login').attr('value','登录').css('background','#3ea751');
+        });
+    });
+    /**
+     * check the login form before user login.
+     * @returns {boolean}
+     */
+    $('#login').click(function(){
+        var mobile = $('#mobile').val();
+        var password = $('#password').val();
+        if(isNull(mobile) && isNull(password)){
+            $('#login').attr('value','手机号或密码不能为空').css('background','red');
+            return false;
+        }
+        if(isNull(mobile)){
+            $('#login').attr('value','请输手机号').css('background','red');
+            return false;
+        }
+        if(isNull(password)){
+            $('#login').attr('value','请输入密码').css('background','red');
+            return false;
+        }
+        var userData = getAjax('member/login',{"mobile":mobile,"password":password});
+        if(userData.code != 200){
+            $('#login').attr('value',userData.msg).css('background','red');
+        }else{
+            window.location.href = "/index.html"
+        }
+    });
+</script>
+<script src="./static/js/tongji.js"></script>
+</body>
+</html>

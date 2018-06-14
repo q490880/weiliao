@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://evalor.cn/websocket.html -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/animate.min.css">
+    <link rel="stylesheet" href="./static/css/wstool.css">
+    <script src="./static/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="./static/plugins/layer/layer.js"></script>
+    <script src="./static/js/common.js"></script>
+<title>微聊 - 让生活更美好 | 房间页</title>
+</head>
+<body>
+<div id="root"><!---->
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container"><a href="index.html" class="navbar-brand monospace"><span>微聊</span> <small>让生活更美好</small></a> <a href="javascript:" role="button" id="logout" class="btn btn-primary">退出</a></div>
+  </nav>
+  <div class="container mt-3 main-container">
+    <div class="row monospace">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12 col-md-5">
+                 <div class="col-sm-12 mt-3">
+                  <h5 class="card-title">服务器返回的消息</h5>
+                  <div class="card-text" >
+                    <textarea id="resultMessage" rows="15" class="form-control mt-1"></textarea>
+                  </div>
+                </div>
+                <hr class="divider divider-dashed">
+                <div class="col-sm-12 mt-3">
+                  <h5 class="card-title">发包消息</h5>
+                  <div class="card-text mt-2">
+                    <textarea id="sendMessage" rows="5" placeholder="需要发送到服务端的内容" class="form-control mt-1"></textarea>
+                  </div>
+                  <div class="card-text mt-2">
+                    <button class="btn btn-block btn-success" id="sendSubmit">发送到服务端</button>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-sm-12 col-md-5">
+                 <div class="col-sm-12 mt-3">
+                  <h5 class="card-title">发送给</h5>
+                  <div class="card-text">
+                    <input type="text" value="全部用户" member_id="0" id="sendObject" readonly  class="form-control mt-1">
+                  </div>
+                  <hr class="divider divider-dashed">
+                  <h5 class="card-title">在线用户(<a href="javascript:" data="全部用户" onclick="selectSendObject(this)">全部</a>)</h5>
+                  <div class="online_member" id="online_member"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    var room_id = getQueryString('id');
+    if(isNull(room_id)){
+        window.location.href = "index.html";
+    }
+    var userData = getAjax('member/online',{"room_id":room_id});
+    if(userData.code != 200){
+        layer.msg(userData.msg)
+    }else{
+        var member = [];
+        $.each(userData.result,function(index,item){
+            member = item.split(",");
+            var memberMessage = '<a href="javascript:" class="online_member_list" data="'+member[0]+'" onclick="selectSendObject(this)">'+member[1]+'</a>';
+            $('#online_member').append(memberMessage);
+        })
+    }
+</script>
+<script src="./static/js/socket.js"></script>
+<script src="./static/js/footer.js"></script>
+<script src="./static/js/tongji.js"></script>
+</body>
+</html>
