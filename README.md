@@ -13,10 +13,10 @@
 　　　root 项目路径;<br>
 　　　index index.html index.htm index.php;<br>
 　　　location / {<br>
-　　　if (!-e $request_filename){
-　　　　　proxy_pass http://127.0.0.1:9501;<br>
+　　　　if (!-e $request_filename){<br>
+　　　　　　　proxy_pass http://127.0.0.1:9501;<br>
+　　　　　　}<br>
 　　　　}<br>
-　　　}<br>
 　　}<br>
 　　4、修改根目录下Config.php Redis和Mysql的配置<br>
 　　5、Public/static/js/common.js下面的baseUrl改为你的域名或IP<br>
